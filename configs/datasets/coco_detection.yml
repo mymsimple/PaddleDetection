@@ -10,7 +10,7 @@ TrainDataset:
 
 EvalDataset:
   !COCODataSet
-    image_dir: /home/mayanmei/ocr_project/PaddleDetection/cocome/train
+    image_dir: /home/mayanmei/ocr_project/PaddleDetection/cocome/val
     anno_path: /home/mayanmei/ocr_project/PaddleDetection/cocome/annotations/instance_val.json
     dataset_dir: /home/mayanmei/ocr_project/PaddleDetection/cocome/
 
