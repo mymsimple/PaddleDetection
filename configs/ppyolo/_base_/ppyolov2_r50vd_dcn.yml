@@ -1,5 +1,5 @@
 architecture: YOLOv3
-pretrain_weights: https://paddledet.bj.bcebos.com/models/pretrained/ResNet50_vd_ssld_pretrained.pdparams
+pretrain_weights: model_final.pdparams
 norm_type: sync_bn
 use_ema: true
 ema_decay: 0.9998
@@ -26,9 +26,9 @@ PPYOLOPAN:
   spp: true
 
 YOLOv3Head:
-  anchors: [[10, 13], [16, 30], [33, 23],
-            [30, 61], [62, 45], [59, 119],
-            [116, 90], [156, 198], [373, 326]]
+  anchors:  [[52, 19],[154, 17],[88, 35],
+             [380, 21],[129, 100],[395, 43],
+             [434, 72],[458,186],[462,392]]
   anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]]
   loss: YOLOv3Loss
   iou_aware: true
