@@ -120,7 +120,7 @@ def draw_bbox(image, im_id, catid2name, bboxes, threshold):
             logger.error('the shape of bbox must be [M, 4] or [M, 8]!')
 
         # draw label
-        class_name = ['Text', 'Title', 'Seal', 'Handwriting', 'Table', 'Figule']
+        class_name = ['Title', 'Text', 'Tabel', 'Handwriting', 'Seal', 'Figule']
 
         # print("catid2name[class_name[catid]]:",catid2name[class_name[catid]])
         text = "{} {:.2f}".format(class_name[catid - 1], score)
