@@ -121,8 +121,7 @@ def draw_bbox(image, im_id, catid2name, bboxes, threshold):
 
         # draw label
         class_name = ['Text', 'Title', 'Seal', 'Handwriting', 'Table', 'Figule']
-        print('catid:', catid)
-        print(type(catid))
+
         # print("catid2name[class_name[catid]]:",catid2name[class_name[catid]])
         text = "{} {:.2f}".format(class_name[catid - 1], score)
         # text = "{} {:.2f}".format(catid2name[catid], score)
