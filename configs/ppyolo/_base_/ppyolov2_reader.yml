@@ -18,7 +18,7 @@ TrainReader:
     - NormalizeImage: {mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225], is_scale: True}
     - Permute: {}
     - Gt2YoloTarget: {anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]], anchors:  [[84, 33], [210, 27],[303, 31],[171, 98], [650, 36],[673, 72],[728, 123], [771, 313], [778, 659]], downsample_ratios: [32, 16, 8]}
-  batch_size: 12
+  batch_size: 4
   shuffle: true
   drop_last: true
   mixup_epoch: 25000
@@ -30,7 +30,7 @@ EvalReader:
     - Resize: {target_size: [1024, 1024], keep_ratio: False, interp: 2}
     - NormalizeImage: {mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225], is_scale: True}
     - Permute: {}
-  batch_size: 8
+  batch_size: 4
 
 TestReader:
   inputs_def:

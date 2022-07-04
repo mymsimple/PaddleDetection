@@ -76,6 +76,7 @@ def parse_args():
         type=str,
         default="vdl_log_dir/image",
         help='VisualDL logging directory for image.')
+    # todo
     parser.add_argument(
         "--save_results",
         type=bool,

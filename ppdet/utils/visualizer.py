@@ -120,11 +120,21 @@ def draw_bbox(image, im_id, catid2name, bboxes, threshold):
             logger.error('the shape of bbox must be [M, 4] or [M, 8]!')
 
         # draw label
-        text = "{} {:.2f}".format(catid2name[catid], score)
-        tw, th = draw.textsize(text)
+        class_name = ['Text', 'Title', 'Seal', 'Handwriting', 'Table', 'Figule']
+        print('catid:', catid)
+        print(type(catid))
+        # print("catid2name[class_name[catid]]:",catid2name[class_name[catid]])
+        text = "{} {:.2f}".format(class_name[catid - 1], score)
+        # text = "{} {:.2f}".format(catid2name[catid], score)
+        from PIL import ImageFont
+        import matplotlib.font_manager as fm
+        # font = ImageFont.load_default(size=40)
+        ft = ImageFont.truetype(fm.findfont(fm.FontProperties(family='DejaVu Sans')), 30)
+        tw, th = draw.textsize(text, font=ft)
+
         draw.rectangle(
             [(xmin + 1, ymin - th), (xmin + tw + 1, ymin)], fill=color)
-        draw.text((xmin + 1, ymin - th), text, fill=(255, 255, 255))
+        draw.text((xmin + 1, ymin - th), text, fill=(255, 255, 255), font=ft)
 
     return image
 
