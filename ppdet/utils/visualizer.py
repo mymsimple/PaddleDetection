@@ -131,9 +131,9 @@ def draw_bbox(image, im_id, catid2name, bboxes, threshold):
         ft = ImageFont.truetype(fm.findfont(fm.FontProperties(family='DejaVu Sans')), 30)
         tw, th = draw.textsize(text, font=ft)
 
-        draw.rectangle(
-            [(xmin + 1, ymin - th), (xmin + tw + 1, ymin)], fill=color)
-        draw.text((xmin + 1, ymin - th), text, fill=(255, 255, 255), font=ft)
+        # draw.rectangle(
+        #     [(xmin + 1, ymin - th), (xmin + tw + 1, ymin)], fill=color)
+        draw.text((xmax - 1 -tw, ymin - th), text, fill=(255, 0, 0),font=ft)
 
     return image
 
